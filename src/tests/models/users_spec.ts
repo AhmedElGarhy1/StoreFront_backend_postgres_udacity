@@ -1,9 +1,9 @@
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 
-import { OrderStore, OrderType } from "../models/orders";
-import { UserStore, UserType } from "../models/users";
-import { ProductStore, ProductType } from "../models/products";
+import { OrderStore, OrderType } from "../../models/orders";
+import { UserStore, UserType } from "../../models/users";
+import { ProductStore, ProductType } from "../../models/products";
 
 dotenv.config();
 const User = new UserStore();

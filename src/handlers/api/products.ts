@@ -54,7 +54,6 @@ const productByCategory = async (
   res: Response
 ): Promise<void> => {
   const category = req.params.category;
-  console.log(category);
   try {
     const products = await Product.getProductsByCategory(category);
     res.status(200).json({ data: products });

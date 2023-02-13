@@ -49,10 +49,12 @@ const createUser = async (req: Request, res: Response): Promise<void> => {
     const userId = user.id as unknown as string;
     await Order.createOrder(userId);
 
-    const token = createToken(user?.id);
+    const token = createToken(userId);
 
     const { first_name, last_name, username } = user;
-    res.status(200).json({ data: { first_name, last_name, username }, token });
+    res
+      .status(200)
+      .json({ data: { first_name, last_name, username, id: userId }, token });
   } catch (err) {
     if (err instanceof Error) {
       res.status(400).json({ msg: err.message });

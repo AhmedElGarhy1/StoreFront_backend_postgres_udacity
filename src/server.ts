@@ -21,3 +21,5 @@ app.listen(port, function () {
   // console.log(`starting app on: ${address}`)
   console.log(`starting app on: localhost:${port}`);
 });
+
+export default app;
