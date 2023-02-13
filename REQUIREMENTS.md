@@ -72,3 +72,33 @@ These are the notes from a meeting with the frontend developer that describe wha
 - `GET  - /api/orders/complete` get all completed orders (token Required)
 - `PATCH- /api/orders/complete` update order status (token Required)
 - `GET  - /api/orders/active` get current active order (token Required)
+
+## Database sehcma
+
+![Database Schema](data_schemas.jpg "Database Schema")
+
+## Data shapses
+
+- users
+
+  - id : `Primary Key`
+  - username : `Varchar Uniqe`
+  - first_name: `varchar`
+  - last_name: `varchar`
+
+- products
+
+  - id : `Primary Key`
+  - name : `varchar`
+  - price : `integer`
+
+- orders
+
+  - id : `Primary Key`
+  - status : `Enum of ('ACTIVE' | 'COMPLETE')`
+  - user_id : `forign key to users table`
+
+- order_porudcts
+  - id : `Primary Key`
+  - product_id: `forign key to product table`
+  - order_id : `forign key to order table`

@@ -1,9 +1,69 @@
 # Storefront Backend Project
 
-## How to run
+## **Setup**
 
-- `npm i`
-- `npm run watch`
+### **Setup Database useing psql terminal**
+
+**Connect to DB**
+
+Open psql terminal and connect to the main user
+
+**Create User**
+
+```sql
+CREATE USER storefront_user WITH PASSWORD 'password123';
+```
+
+**Create Databases**
+
+- for developing
+
+```sql
+CREATE DATABASE storefront_db;
+```
+
+- for testing
+
+```sql
+CREATE DATABASE storefront_test_db;
+```
+
+**Grant all privileges to storefront_user**
+
+```sql
+GRANT ALL PRIVILEGES ON DATABASE storefront_db TO storefront_user;
+GRANT ALL PRIVILEGES ON DATABASE storefront_test_db TO storefront_user;
+```
+
+### **Setup Environment Variables**
+
+```.env
+PORT=8000
+PG_PORT=5432
+PG_DATABASE=storefront_db
+PG_TEST_DATABASE=storefront_test_db
+PG_PASSWORD=password123
+PG_USER=storefront_user
+PG_HOST=localhost
+ENV=dev
+SALT_ROUND=
+BCRYPT_SECRET=
+JWT_SECRET=
+```
+
+Put them In File Called `.env`
+
+### **run and test**
+
+- install
+  - `npm i` to install all required dependencies
+- run
+  - `npm run watch` to run the server
+    - the server will be running on the port specified on .env file [8000]
+    - the database will be running on the host and port specified on .env file [localhost]:[5432]
+  - you can visit the endpoints in REQUIREMENTS.md file
+- test
+  - `npm test`
 
 ---
 

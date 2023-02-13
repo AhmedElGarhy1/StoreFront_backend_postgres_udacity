@@ -1,16 +1,18 @@
 {
   "dev": {
     "driver": "pg",
-    "host": "localhost",
-    "database": "storefront",
-    "user": "postgres",
-    "password": "gemater"
+    "host": { "ENV": "PG_HOST" },
+    "port": { "ENV": "PG_PORT" },
+    "database": { "ENV": "PG_DATABASE" },
+    "user": { "ENV": "PG_USER" },
+    "password": { "ENV": "PG_PASSWORD" }
   },
   "test": {
     "driver": "pg",
-    "host": "localhost",
-    "database": "storefront_test",
-    "user": "postgres",
-    "password": "gemater"
+    "host": { "ENV": "PG_HOST" },
+    "port": { "ENV": "PG_PORT" },
+    "database": { "ENV": "PG_TEST_DATABASE" },
+    "user": { "ENV": "PG_USER" },
+    "password": { "ENV": "PG_PASSWORD" }
   }
 }
