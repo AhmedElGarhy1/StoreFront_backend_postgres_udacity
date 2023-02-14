@@ -53,6 +53,20 @@ JWT_SECRET=
 
 Put them In File Called `.env`
 
+### **migrations**
+
+```bash
+# to start development migrations
+db-migrate up
+# to start test migrations
+db-migrate up -e test
+
+# to end development migrations
+db-migrate down
+# to end test migrations
+db-migrate down -e test
+```
+
 ### **run and test**
 
 - install
@@ -63,7 +77,7 @@ Put them In File Called `.env`
     - the database will be running on the host and port specified on .env file [localhost]:[5432]
   - you can visit the endpoints in REQUIREMENTS.md file
 - test
-  - `npm test`
+  - `npm run test`
 
 ---
 
